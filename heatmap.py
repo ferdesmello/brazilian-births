@@ -2,16 +2,19 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib.ticker as ticker
+from pathlib import Path
 
 #-------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------
 # Reading the .xlsx file and storing it as a pandas Data Frame
 # Lines-------------------------------------------
 
-df_births = pd.read_excel("Births Brazil DataSUS.xlsx", 
+data_file = Path(__file__).with_name("births_brazil_datasus.xlsx")
+
+df_births = pd.read_excel(data_file, 
                           header = 4, 
                           index_col = 0,
-                          usecols = "B,I:AE",
+                          usecols = "B,I:AG",
                           skipfooter = 2)
 
 #-------------------------------------------------------------------------------------
@@ -20,13 +23,13 @@ df_births = pd.read_excel("Births Brazil DataSUS.xlsx",
 #-------------------------------------------------------------------------------------
 # Figure 1
 # Heatmap
-# Creates a figure object with size 12x8 inches
-fig1, ax = plt.subplots(figsize = (14, 8))
+# Creates a figure object with size 15x8 inches
+fig1, ax = plt.subplots(figsize = (15, 8))
 
 sns.heatmap(df_births, cbar_kws = {'shrink': 0.8}) #, linewidths = 0.5, linecolor = 'white')
 
 # Figure Title
-fig1.suptitle('Birth seasonality in Brazil', fontsize = 16, x = 0.072, ha = 'left')
+fig1.suptitle('Birth seasonality in Brazil', fontsize = 16, x = 0.067, ha = 'left')
 
 # Colorbar title
 colorbar = ax.collections[0].colorbar
@@ -73,11 +76,11 @@ ax.tick_params(which = "both", bottom = False, top = False, left = False, right 
 plt.tight_layout()
 
 # Saving
-plt.savefig("Brazil births heatmap.png", bbox_inches = "tight")
-#plt.savefig("Brazil births heatmap.eps", transparent = True, bbox_inches = "tight", transparent = True)
+plt.savefig("brazil_births_heatmap.png", bbox_inches = "tight")
+#plt.savefig("brazil_births_heatmap.eps", transparent = True, bbox_inches = "tight", transparent = True)
 # Transparence will be lost in .eps, save in .svg or .pdf for transparences
-#plt.savefig("Brazil births heatmap.svg", format = "svg", transparent = True, bbox_inches = "tight")
-#plt.savefig("Brazil births heatmap.pdf", format = "pdf", transparent = True, bbox_inches = "tight")
+#plt.savefig("brazil_births_heatmap.svg", format = "svg", transparent = True, bbox_inches = "tight")
+#plt.savefig("brazil_births_heatmap.pdf", format = "pdf", transparent = True, bbox_inches = "tight")
 
 # Showing figures-------------------------------------------------------------------------------------------
 plt.show()  # You must call plt.show() to make graphics appear.
