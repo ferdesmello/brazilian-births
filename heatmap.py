@@ -14,7 +14,7 @@ data_file = Path(__file__).with_name("births_brazil_datasus.xlsx")
 df_births = pd.read_excel(data_file, 
                           header = 4, 
                           index_col = 0,
-                          usecols = "B,I:AG",
+                          usecols = "B,F:AG",
                           skipfooter = 2)
 
 #-------------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ df_births = pd.read_excel(data_file,
 #-------------------------------------------------------------------------------------
 # Figure 1
 # Heatmap
-# Creates a figure object with size 15x8 inches
-fig1, ax = plt.subplots(figsize = (15, 8))
+# Creates a figure object with size 15x7 inches
+fig1, ax = plt.subplots(figsize = (15, 7))
 
 sns.heatmap(df_births, cbar_kws = {'shrink': 0.8}) #, linewidths = 0.5, linecolor = 'white')
 
