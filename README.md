@@ -49,6 +49,8 @@ The script will generate `brazil_births_heatmap.png` in the project directory an
 
 ## Output
 
+The peak birth season appears to be ending summer to autumn, and counting back nine months, the peak conception season would be winter. This seems to be the mirror version of what happens in the United States, in the Northern Hemisphere.
+
 ![Birth seasonality in Brazil](./brazil_births_heatmap.png "Birth seasonality in Brazil")
 
 ## Notes
