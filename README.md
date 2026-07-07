@@ -12,10 +12,10 @@ To build the spreadsheet used by the script, do this:
 
 1. Go to the [DATASUS TABNET](https://datasus.saude.gov.br/informacoes-de-saude-tabnet/) page.
 	- In the "Estatísticas Vitais" section, click on "Nascidos Vivos (SINASC)".
-	- and select "Nascidos vivos - desde 1994"
+	- And select "Nascidos vivos - desde 1994"
 2. On the next page, select these for national coverage:
 	- Select "Nascidos vivos"
-	- Snd in "Abrangência Geográfica", select "Brasil por Municípios"
+	- And in "Abrangência Geográfica", select "Brasil por Municípios"
 3. On the next table setup screen, choose:
 	- Linha (Row): "Mês do nascimento"
 	- Coluna (Column): "Ano do nascimento"
